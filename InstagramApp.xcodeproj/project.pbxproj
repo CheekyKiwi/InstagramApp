@@ -15,6 +15,7 @@
 		95D1ED031B65C7F400D9CF39 /* InstagramAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D1ED021B65C7F400D9CF39 /* InstagramAppTests.m */; };
 		95D1ED141B65CF2D00D9CF39 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D1ED131B65CF2D00D9CF39 /* ViewController.m */; };
 		95D1ED171B65E82700D9CF39 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D1ED161B65E82700D9CF39 /* TableViewController.m */; };
+		95D1ED1A1B6802B900D9CF39 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D1ED191B6802B900D9CF39 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		95D1ED131B65CF2D00D9CF39 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		95D1ED151B65E82700D9CF39 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		95D1ED161B65E82700D9CF39 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		95D1ED181B6802B900D9CF39 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		95D1ED191B6802B900D9CF39 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				95D1ED131B65CF2D00D9CF39 /* ViewController.m */,
 				95D1ED151B65E82700D9CF39 /* TableViewController.h */,
 				95D1ED161B65E82700D9CF39 /* TableViewController.m */,
+				95D1ED181B6802B900D9CF39 /* DetailViewController.h */,
+				95D1ED191B6802B900D9CF39 /* DetailViewController.m */,
 				95D1ECF01B65C7F400D9CF39 /* Main.storyboard */,
 				95D1ECF31B65C7F400D9CF39 /* Images.xcassets */,
 				95D1ECF51B65C7F400D9CF39 /* LaunchScreen.xib */,
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D1ED1A1B6802B900D9CF39 /* DetailViewController.m in Sources */,
 				95D1ED141B65CF2D00D9CF39 /* ViewController.m in Sources */,
 				95D1ECEC1B65C7F400D9CF39 /* AppDelegate.m in Sources */,
 				95D1ECE91B65C7F400D9CF39 /* main.m in Sources */,

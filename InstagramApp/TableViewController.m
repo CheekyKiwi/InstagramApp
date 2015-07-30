@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "DetailViewController.h"
 
 @interface TableViewController ()
 
@@ -19,8 +20,7 @@
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.usersList = [[NSMutableArray alloc] init];
-    [self.view addSubview: self.tableView];
+    //self.usersList = [[NSMutableArray alloc] init];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -29,10 +29,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(void) viewWillAppear:(BOOL)animated
+/*-(void) viewWillAppear:(BOOL)animated
 {
     [self.tableView reloadData];
-}
+}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -50,32 +50,43 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.usersList count];
+    NSInteger i = [self.usersList count];
+    return i;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    //what do these things even do? it works fine without them
     
-    static NSString *CellIdentifier = @"Cell";
+    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
-    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    if (cell == nil)
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                  reuseIdentifier:@"Cell"];
+    
+    /*if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:CellIdentifier];
-    }
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:@"Cell"];
+    }*/
     
-    // Configure the cell...
     cell.textLabel.textColor = [UIColor blackColor];
-    //NSObject *object = [NSObject new];
-    cell.textLabel.text = @"HI"; //[[self.usersList objectAtIndex:indexPath.row] objectForKey:@"full_name"];
-    
+    cell.textLabel.text = [[self.usersList objectAtIndex:indexPath.row] objectForKey:@"full_name"];
+    cell.detailTextLabel.text = [[self.usersList objectAtIndex:indexPath.row] objectForKey:@"username"];
+    cell.detailTextLabel.textColor = [UIColor grayColor];
     return cell;
 }
 
+- (IBAction)tableView:(UITableView *)tv didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailViewController *dvc = [[DetailViewController alloc] init];
+    dvc.name = [[self.usersList objectAtIndex:indexPath.row] objectForKey:@"full_name"];
+    dvc.username = [[self.usersList objectAtIndex:indexPath.row] objectForKey:@"username"];
+    dvc.idNumber = [[self.usersList objectAtIndex:indexPath.row] objectForKey:@"id"];
+    [self presentViewController:dvc animated:YES completion:nil];
+}
 
 /*
 // Override to support conditional editing of the table view.

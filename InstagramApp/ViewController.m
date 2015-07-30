@@ -71,18 +71,18 @@
         
         //data is the key, the value is an array of dictionaries
         self.list  = [searchResponseDictionary  objectForKey:@"data"];
-    });
-    
-     dispatch_async(dispatch_get_main_queue(),^ {
-         
-         TableViewController *searchTableViewController = [TableViewController new];
-         
-         searchTableViewController.usersList = self.list;
-         
-        [self.view endEditing:YES];
-         
-        [self presentViewController:searchTableViewController animated:YES completion:nil]; });
         
+        dispatch_async(dispatch_get_main_queue(),^ {
+            
+            TableViewController *searchTableViewController = [TableViewController new];
+            
+            searchTableViewController.usersList = self.list;
+            
+            [self.view endEditing:YES];
+            
+            [self presentViewController:searchTableViewController animated:YES completion:nil]; });
+
+    });
         //[self.navigationController pushViewController:searchTableViewController animated:YES];
                         
     
