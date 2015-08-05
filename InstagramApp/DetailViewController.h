@@ -16,4 +16,10 @@
 
 @property (strong, nonatomic) NSString *idNumber;
 
+@property (strong, nonatomic) NSString *followers;
+
+@property (strong, nonatomic) NSString *following;
+
+- (void) setFollowersOrFollowing:(NSString *)input;
+
 @end
